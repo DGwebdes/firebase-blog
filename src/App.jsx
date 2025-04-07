@@ -23,6 +23,9 @@ function App() {
                         title: data.title,
                         content: data.content,
                         date: data.date ? data.date : "Unknown Date",
+                        author: data.author ? data.author : "Unknown Author",
+                        imgURL: data.imgURL ? data.imgURL : null,
+                        userId: data.userId,
                     };
                 }),
             );
@@ -39,7 +42,9 @@ function App() {
                     <Route path="/" element={<Home posts={posts} />} />
                     <Route
                         path="/post/:id"
-                        element={<PostDetail posts={posts} />}
+                        element={
+                            <PostDetail posts={posts} setPosts={setPosts} />
+                        }
                     />
                     <Route
                         path="/create"

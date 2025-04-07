@@ -20,6 +20,9 @@ function CreatePost({ setPosts }) {
             title,
             content,
             date: new Date().toISOString().split("T")[0],
+            author: user?.displayName,
+            imgURL: user?.photoURL,
+            userId: user.uid,
         };
         const docRef = await addDoc(collection(db, "posts"), newPost);
         setPosts((prev) => [{ id: docRef.id, ...newPost }, ...prev]);

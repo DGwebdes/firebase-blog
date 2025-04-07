@@ -11,12 +11,12 @@ const Navbar = () => {
         navigate("/");
     };
     return (
-        <nav className="p-4 bg-gray-200 flex justify-between">
+        <nav className="py-4 px-10 bg-gray-200 flex justify-between">
             <Link to="/" className="text-lg font-bold">
-                Home
+                LOGO
             </Link>
             {user ? (
-                <div className="flex gap-2">
+                <div className="flex gap-5">
                     <button
                         className="text-lg text-red-500"
                         onClick={handleLogout}
