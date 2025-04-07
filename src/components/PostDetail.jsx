@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { db } from "../firebaseConfig";
 import { doc, updateDoc } from "firebase/firestore";
@@ -10,6 +10,7 @@ const PostDetail = ({ posts, setPosts }) => {
     const [userOwn, setUserOwn] = useState(false);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const navigate = useNavigate();
 
     const post = posts.find((p) => p.id === id);
     useEffect(() => {
@@ -50,7 +51,7 @@ const PostDetail = ({ posts, setPosts }) => {
             setPosts((prevPosts) =>
                 prevPosts.map((p) => (p.id === post.id ? updatedPost : p)),
             );
-            window.location.href = "/";
+            navigate("/");
         } catch (error) {
             console.error("Error updating post: ", error);
         }
