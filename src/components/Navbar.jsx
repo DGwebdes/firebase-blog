@@ -11,7 +11,7 @@ const Navbar = () => {
         navigate("/");
     };
     return (
-        <nav className="py-4 px-10 bg-gray-200 flex justify-between">
+        <nav className="py-4 px-10 flex justify-between">
             <Link to="/" className="text-lg font-bold">
                 LOGO
             </Link>
