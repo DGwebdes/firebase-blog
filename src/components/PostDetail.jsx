@@ -60,7 +60,7 @@ const PostDetail = ({ posts, setPosts }) => {
     if (!post) return <p className="p-6 text-red-500">Post not found!</p>;
     const today = new Date().toISOString().split("T")[0];
     return (
-        <div className="py-4 px-10">
+        <div className="py-4 px-10 bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
             {userOwn ? (
                 <div className="flex flex-col gap-4">
                     <h1>Edit</h1>
@@ -73,7 +73,7 @@ const PostDetail = ({ posts, setPosts }) => {
                         />
                         <input
                             type="text"
-                            className="p-2"
+                            className="p-2 bg-white dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded"
                             disabled
                             value={today}
                         />

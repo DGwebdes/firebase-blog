@@ -32,27 +32,27 @@ function CreatePost({ setPosts }) {
     };
 
     return (
-        <div className="p-6">
-            <h1 className="text-2xl font-bold">Create New Post</h1>
-            <form onSubmit={handleSubmit} className="mt-4">
+        <div className="py-4 px-10 bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
+            <h1 className="text-2xl font-bold mb-4">Create New Post</h1>
+            <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                 <input
                     type="text"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Title"
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-3 border rounded bg-white text-black dark:bg-gray-800 dark:text-white dark:border-gray-600"
                     required
                 />
                 <textarea
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     placeholder="Content"
-                    className="w-full p-2 border rounded mb-2"
+                    className="w-full p-3 border rounded bg-white text-black dark:bg-gray-800 dark:text-white dark:border-gray-600"
                     required
                 />
                 <button
                     type="submit"
-                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-500 transition-all"
                 >
                     Add Post
                 </button>

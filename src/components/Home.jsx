@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Home({ posts }) {
     return (
-        <div className="py-4 px-10">
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
             <h1 className="text-3xl font-bold mb-4">What were you saying...</h1>
             {posts.map((post) => (
                 <div
