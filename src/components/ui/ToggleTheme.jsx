@@ -8,12 +8,12 @@ const ToggleTheme = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition-colors"
+            className="p-2 rounded-full bg-gray-300 dark:bg-gray-800 transition-colors"
         >
             {theme === "dark" ? (
                 <Sun className="text-yellow-400" />
             ) : (
-                <Moon className="text-white" />
+                <Moon className="text-gray-700" />
             )}
         </button>
     );

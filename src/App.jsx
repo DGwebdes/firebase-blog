@@ -24,7 +24,7 @@ function App() {
                         content: data.content,
                         date: data.date ? data.date : "Unknown Date",
                         author: data.author ? data.author : "Unknown Author",
-                        imgURL: data.imgURL ? data.imgURL : null,
+                        imgURL: data.imgURL ? data.imgURL : "/potion.png",
                         userId: data.userId,
                     };
                 }),
