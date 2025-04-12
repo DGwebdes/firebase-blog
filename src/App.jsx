@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseConfig"; // Import Firebase Firestore
 import Navbar from "./components/ui/Navbar";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import PostDetail from "./components/PostDetail";
 import CreatePost from "./components/CreatePost";
 import { AuthProvider } from "./context/AuthContext";
