@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Layout from "./Layout";
 
-function Home({ posts }) {
+function Posts({ posts }) {
     return (
-        <div className="py-4 px-10">
-            <h1 className="text-3xl font-bold mb-4">What were you saying...</h1>
+        <Layout>
+            <h1 className="text-3xl font-bold mb-4">The Yapping!</h1>
             {posts.map((post) => (
                 <div
                     key={post.id}
@@ -21,20 +22,26 @@ function Home({ posts }) {
                         </Link>
                         <p className="text-gray-600">{post.date}</p>
                         <p>{post.content}</p>
-                        <p>Author: {post.author}</p>
+                        <p>
+                            <i>
+                                <small>By: {post.author}</small>
+                            </i>
+                        </p>
                     </div>
-                    <div className="">
+                    <div className="md:min-w-[100px] max-w-[65px] h-fit p-2">
                         <img
                             src={post.imgURL}
-                            width={100}
-                            height={100}
-                            alt=""
+                            style={{
+                                objectFit: "cover",
+                                borderRadius: 360,
+                            }}
+                            alt="post-creator-image"
                         />
                     </div>
                 </div>
             ))}
-        </div>
+        </Layout>
     );
 }
 
-export default Home;
+export default Posts;
