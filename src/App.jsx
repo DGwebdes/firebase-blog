@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "./firebaseConfig"; // Import Firebase Firestore
-import Navbar from "./components/ui/Navbar";
-import Home from "./pages/Home";
+import Posts from "./pages/Posts";
 import PostDetail from "./components/PostDetail";
 import CreatePost from "./components/CreatePost";
 import { AuthProvider } from "./context/AuthContext";
-import Login from "./components/Login";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
 
 function App() {
     const [posts, setPosts] = useState([]);
@@ -37,11 +37,11 @@ function App() {
     return (
         <AuthProvider>
             <Router>
-                <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home posts={posts} />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/posts" element={<Posts posts={posts} />} />
                     <Route
-                        path="/post/:id"
+                        path="posts/post/:id"
                         element={
                             <PostDetail posts={posts} setPosts={setPosts} />
                         }

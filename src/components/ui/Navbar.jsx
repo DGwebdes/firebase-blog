@@ -12,12 +12,14 @@ const Navbar = () => {
         navigate("/");
     };
     return (
-        <nav className="py-4 px-10 bg-gray-200 dark:bg-gray-900 text-black dark:text-white flex justify-between transition-colors duration-300">
+        <>
             <Link to="/" className="text-lg font-bold">
                 LOGO
             </Link>
             {user ? (
                 <div className="flex gap-5 items-center">
+                    <Link to="/posts">Posts</Link>
+
                     <button
                         className="text-lg text-red-500"
                         onClick={handleLogout}
@@ -34,13 +36,14 @@ const Navbar = () => {
                 </div>
             ) : (
                 <div className="flex gap-5 items-center">
+                    <Link to="/posts">Posts</Link>
                     <Link className="text-lg text-blue-500" to="/login">
                         Login
                     </Link>
                     <ToggleTheme />
                 </div>
             )}
-        </nav>
+        </>
     );
 };
 

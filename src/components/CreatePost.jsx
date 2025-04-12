@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebaseConfig"; // Import Firebase Firestore
+import { db } from "../firebaseConfig";
 import { useAuth } from "../context/AuthContext";
+import Layout from "../pages/Layout";
 
 function CreatePost({ setPosts }) {
     const [title, setTitle] = useState("");
@@ -32,7 +33,7 @@ function CreatePost({ setPosts }) {
     };
 
     return (
-        <div className="py-4 px-10 bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
+        <Layout>
             <h1 className="text-2xl font-bold mb-4">Create New Post</h1>
             <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                 <input
@@ -57,7 +58,7 @@ function CreatePost({ setPosts }) {
                     Add Post
                 </button>
             </form>
-        </div>
+        </Layout>
     );
 }
 

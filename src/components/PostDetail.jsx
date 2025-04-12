@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { db } from "../firebaseConfig";
 import { doc, updateDoc } from "firebase/firestore";
+import Layout from "../pages/Layout";
 
 const PostDetail = ({ posts, setPosts }) => {
     const { id } = useParams();
@@ -60,68 +61,70 @@ const PostDetail = ({ posts, setPosts }) => {
     if (!post) return <p className="p-6 text-red-500">Post not found!</p>;
     const today = new Date().toISOString().split("T")[0];
     return (
-        <div className="py-4 px-10 bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen transition-colors duration-300">
-            {userOwn ? (
-                <div className="flex flex-col gap-4">
-                    <h1>Edit</h1>
-                    <form className="flex flex-col gap-4">
-                        <input
-                            type="text"
-                            value={title}
-                            className="p-2"
-                            onChange={(e) => setTitle(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            className="p-2 bg-white dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded"
-                            disabled
-                            value={today}
-                        />
-                        <textarea
-                            name="content"
-                            id="content-edited"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
+        <Layout>
+            <>
+                {userOwn ? (
+                    <div className="flex flex-col gap-4">
+                        <h1>Edit</h1>
+                        <form className="flex flex-col gap-4">
+                            <input
+                                type="text"
+                                value={title}
+                                className="p-2"
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                            <input
+                                type="text"
+                                className="p-2 bg-white dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 rounded"
+                                disabled
+                                value={today}
+                            />
+                            <textarea
+                                name="content"
+                                id="content-edited"
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                            >
+                                {/* {post.content} */}
+                            </textarea>
+                            <input
+                                type="text"
+                                value={post.author}
+                                disabled
+                                className="p-2"
+                            />
+                            <button
+                                className="py-2 px-4 border rounded-2xl hover:bg-green-500 w-fit self-center hover:cursor-pointer"
+                                onClick={handleSubmit}
+                            >
+                                Save Edit
+                            </button>
+                        </form>
+                        <Link
+                            to="/"
+                            className="mt-4 inline-block text-blue-500 hover:underline"
                         >
-                            {/* {post.content} */}
-                        </textarea>
-                        <input
-                            type="text"
-                            value={post.author}
-                            disabled
-                            className="p-2"
-                        />
-                        <button
-                            className="py-2 px-4 border rounded-2xl hover:bg-green-500 w-fit self-center hover:cursor-pointer"
-                            onClick={handleSubmit}
+                            Back to Home
+                        </Link>
+                    </div>
+                ) : (
+                    <div className="flex flex-col gap-4">
+                        <h1 className="text-3xl font-bold">{post.title}</h1>
+                        <p className="text-gray-600">{post.date}</p>
+                        <p className="mt-4">{post.content}</p>
+                        <p className="text-sm text-gray-600">
+                            Author: {post.author}
+                        </p>
+                        <Link
+                            to="/"
+                            className="mt-4 inline-block text-blue-500 hover:underline"
                         >
-                            Save Edit
-                        </button>
-                    </form>
-                    <Link
-                        to="/"
-                        className="mt-4 inline-block text-blue-500 hover:underline"
-                    >
-                        Back to Home
-                    </Link>
-                </div>
-            ) : (
-                <div className="flex flex-col gap-4">
-                    <h1 className="text-3xl font-bold">{post.title}</h1>
-                    <p className="text-gray-600">{post.date}</p>
-                    <p className="mt-4">{post.content}</p>
-                    <p className="text-sm text-gray-600">
-                        Author: {post.author}
-                    </p>
-                    <Link
-                        to="/"
-                        className="mt-4 inline-block text-blue-500 hover:underline"
-                    >
-                        Back to Home
-                    </Link>
-                </div>
-            )}
-        </div>
+                            Back to Home
+                        </Link>
+                    </div>
+                )}
+            </>
+        </Layout>
     );
 };
 

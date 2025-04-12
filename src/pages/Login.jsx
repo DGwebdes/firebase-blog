@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import Layout from "./Layout";
+
 const Login = () => {
     const navigate = useNavigate();
     const { GoogleSignIn } = useAuth();
@@ -16,7 +18,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-300 flex justify-center items-center">
+        <Layout>
             <div className="p-6 max-w-sm mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg inset-0">
                 <h1 className="text-2xl font-bold text-center text-black dark:text-white mb-6">
                     Login
@@ -48,7 +50,7 @@ const Login = () => {
                     Sign in With Google
                 </button>
             </div>
-        </div>
+        </Layout>
     );
 };
 
