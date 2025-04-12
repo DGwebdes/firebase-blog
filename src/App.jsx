@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "./firebaseConfig"; // Import Firebase Firestore
+import { db } from "./config/firebaseConfig"; // Import Firebase Firestore
 import Posts from "./pages/Posts";
 import PostDetail from "./components/PostDetail";
 import CreatePost from "./components/CreatePost";

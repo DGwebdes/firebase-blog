@@ -77,8 +77,8 @@ react-firebase/
 │   │   ├── ui/           # Reusable UI components (e.g., Navbar, Footer)
 │   ├── pages/            # Application pages (e.g., LoginPage, Posts)
 │   ├── context/          # Context and Providers (e.g., Theme, Auth)
-│   ├── firebaseConfig    # General firebase configuration file (initializes the firebase app)
-│   └── styles            # CSS and styling files
+│   ├── config/           # General configuration files (e.g., Firebase Configuration)
+│   └── styles/           # CSS and styling files
 ├── .env                  # Environment variables (optional)
 └── package.json          # Project dependencies and scripts
 ```

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { db } from "../firebaseConfig";
+import { db } from "../config/firebaseConfig";
 import { doc, updateDoc } from "firebase/firestore";
 import Layout from "../pages/Layout";
 
