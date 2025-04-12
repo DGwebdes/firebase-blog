@@ -5,7 +5,7 @@ import Layout from "./Layout";
 function Posts({ posts }) {
     return (
         <Layout>
-            <h1 className="text-3xl font-bold mb-4">What were you saying...</h1>
+            <h1 className="text-3xl font-bold mb-4">The Yapping!</h1>
             {posts.map((post) => (
                 <div
                     key={post.id}

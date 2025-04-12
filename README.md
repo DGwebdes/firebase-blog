@@ -83,29 +83,17 @@ react-firebase/
 └── package.json          # Project dependencies and scripts
 ```
 
----
-
-## Key Features
-
-1. Authentication:
-
-   - Login/Logout
-   - Firebase Authentication with Google Provider
-
-2. Blog Posts
-   - Logged in Users can create and save their on posts
-   - Logged in Users can edit the posts they own
-   - Users can read what all users posted
-
-3. Permanent Storage
-   - Firebase/firestore stores users posts
-
-4. Themed
-   - Using tailwind and Context Providers to create light/dark themes
-
 ## Firebase Integration
 
-To use firebase you will need to create and account and add firebase to your application using their SDK:
+To use firebase you will need to create and account and add firebase to your application using their SDK
+
+1. Install Firebase SDK:
+
+   ```bash
+   npm install firebase
+   ```
+
+2. Add firebase configuration file:
 
 ```js
   import { initializeApp } from "firebase/app";
@@ -130,6 +118,26 @@ To use firebase you will need to create and account and add firebase to your app
 
 Once that is done you can run your application and test locally.
 You will need to configure the firestore database rules on firebase to make sure your database is secure.
+
+---
+
+## Key Features
+
+1. Authentication:
+
+   - Login/Logout
+   - Firebase Authentication with Google Provider
+
+2. Blog Posts
+   - Logged in Users can create and save their on posts
+   - Logged in Users can edit the posts they own
+   - Users can read what all users posted
+
+3. Permanent Storage
+   - Firebase/firestore stores users posts
+
+4. Themed
+   - Using tailwind and Context Providers to create light/dark themes
 
 ## Testing
 

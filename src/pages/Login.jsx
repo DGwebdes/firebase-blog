@@ -33,7 +33,7 @@ const Login = () => {
                 <div className="mt-4 flex items-center">
                     <div className="border-b w-full"></div>
                     <span className="mx-4 text-sm text-gray-500 dark:text-gray-400">
-                        or
+                        with
                     </span>
                     <div className="border-b w-full"></div>
                 </div>
