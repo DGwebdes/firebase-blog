@@ -1,8 +1,10 @@
 # Demo React/Firebase Blog Overview
 
-A blog, maybe a bit more like reddit, in a much smaller scale and definitely not fully polished.
+A blog, if you will!
 I use this project to experiment with Firebase as an alternative to deploying 'full-stack' applications.
 The idea is simple, understand limitations.
+
+Live site: <https://ete-blog.netlify.app/>
 
 ---
 
